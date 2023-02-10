@@ -1,5 +1,4 @@
 import { css, ContentTheme, createGlobalStyle } from "styled-components";
-
 export const PCGlobalStyleConstant: ContentTheme = {
   Fs_1: css`
     font-size: 12px;
@@ -226,6 +225,8 @@ export const MobileGlobalStyleConstant: ContentTheme = {
 
 export const GlobalStyle = createGlobalStyle`
   body {
+    min-width: 800px;
+    user-select: none;
     color: #666;
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;

@@ -57,8 +57,8 @@ export const STContainer = styled.div<ISTContainerProps>`
       dividerColor
         ? dividerColor
         : isUsingTheme
-        ? `rgb(${theme.S3})`
-        : `rgba(${theme.M5}, 0.5)`};
+        ? `rgb(${theme.pc.S3})`
+        : `rgba(${theme.pc.M5}, 0.5)`};
     border-top-style: ${({ borderStyle }) => borderStyle};
     border-top-width: 1px;
     transform: translateY(50%);
@@ -73,8 +73,8 @@ export const STContainer = styled.div<ISTContainerProps>`
       dividerColor
         ? dividerColor
         : isUsingTheme
-        ? `rgb(${theme.S3})`
-        : `rgba(${theme.M5}, 0.5)`};
+        ? `rgb(${theme.pc.S3})`
+        : `rgba(${theme.pc.M5}, 0.5)`};
     border-top-style: ${({ borderStyle }) => borderStyle};
     border-top-width: 1px;
     transform: translateY(50%);
@@ -84,11 +84,11 @@ export const STContainer = styled.div<ISTContainerProps>`
 export const STTitle = styled.pre<ISTTitleProps>`
   display: inline-block;
   padding: 0 ${({ innerPadding }) => `${innerPadding}px`};
-  font-family: ${({ theme }) => theme.Family};
+  font-family: ${({ theme }) => theme.pc.Family};
   color: rgb(
-    ${({ isUsingTheme, theme }) => (isUsingTheme ? theme.S3 : theme.M4)}
+    ${({ isUsingTheme, theme }) => (isUsingTheme ? theme.pc.S3 : theme.pc.M4)}
   );
   font-weight: 400;
-  ${({ theme }) => theme.Fs_2};
+  ${({ theme }) => theme.pc.Fs_2};
   margin: 0;
 `;

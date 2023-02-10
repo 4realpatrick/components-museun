@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import {
   buttonSizeStyleMapping,
   buttonTypeStyleMapping,
@@ -13,7 +13,14 @@ import {
   ELLIPSIS,
 } from "./const";
 import { TButtonType, TButtonSize, TIconPosition } from "./interface";
-
+const scan = keyframes`
+  0% {
+      opacity:1
+  }
+  100% {
+      opacity:0;
+  }
+`;
 const commonWrapperStyle = css`
   display: inline-flex;
   align-items: center;
@@ -48,6 +55,33 @@ export const STWrapper = styled.div<{
     }
     return str;
   }}
+  & {
+    rect.one {
+      animation: ${scan} 0.9s linear 0s infinite;
+    }
+
+    rect.two {
+      animation: ${scan} 0.9s linear 0.1125s infinite;
+    }
+    rect.three {
+      animation: ${scan} 0.9s linear 0.225s infinite;
+    }
+    rect.four {
+      animation: ${scan} 0.9s linear 0.3375s infinite;
+    }
+    rect.five {
+      animation: ${scan} 0.9s linear 0.45s infinite;
+    }
+    rect.six {
+      animation: ${scan} 0.9s linear 0.5625s infinite;
+    }
+    rect.seven {
+      animation: ${scan} 0.9s linear 0.675s infinite;
+    }
+    rect.eight {
+      animation: ${scan} 0.9s linear 0.7875s infinite;
+    }
+  }
   &:hover {
     ${({ type, disabled = false, isLoading = false }) =>
       !disabled && !isLoading && buttonHoverStyleMapping[type]};
