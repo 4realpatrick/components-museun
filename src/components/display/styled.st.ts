@@ -1,9 +1,9 @@
-import { $FIRST_COLOR, $FONT_COLOR, $SECOND_COLOR } from "&/constant/color";
-import styled from "styled-components";
+import { $FONT_COLOR, $SECOND_COLOR } from "&/constant/color";
+import styled, { css } from "styled-components";
 
 export const itemHead = styled.span`
   display: inline-block;
-  background: ${$FIRST_COLOR};
+  background: skyblue;
   height: 20px;
   width: 8px;
 `;
@@ -20,13 +20,17 @@ export const container = styled.div`
 export const block = styled.div`
   margin-bottom: 50px;
 `;
-export const displayCase = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+export const displayCase = styled.div<{ inline: boolean }>`
+  ${({ inline = true }) =>
+    inline &&
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    `};
 `;
 
 export const description = styled.h3`
   padding-left: 30px;
   color: ${$SECOND_COLOR};
-`
+`;

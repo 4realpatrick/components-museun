@@ -4,14 +4,15 @@ import Title from "./item-title";
 interface IProps {
   title: string;
   desc?: string;
+  inline?: boolean;
 }
 const DisplayBlock: React.FCWithChildren<IProps> = (props) => {
-  const { desc, children } = props;
+  const { desc, children, inline = true } = props;
   return (
     <st.block>
       <Title {...props} />
       {!!desc && <st.description>{desc}</st.description>}
-      <st.displayCase>{children}</st.displayCase>
+      <st.displayCase inline={inline}>{children}</st.displayCase>
     </st.block>
   );
 };

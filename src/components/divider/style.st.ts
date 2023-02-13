@@ -44,6 +44,7 @@ interface ISTTitleProps {
   isUsingTheme?: boolean;
 }
 export const STContainer = styled.div<ISTContainerProps>`
+  width: 100%;
   display: flex;
   margin: ${({ margin }) => `${margin}px 0`};
   white-space: nowrap;
@@ -60,7 +61,7 @@ export const STContainer = styled.div<ISTContainerProps>`
         ? `rgb(${theme.pc.S3})`
         : `rgba(${theme.pc.M5}, 0.5)`};
     border-top-style: ${({ borderStyle }) => borderStyle};
-    border-top-width: 1px;
+    border-top-width: 2px;
     transform: translateY(50%);
     content: "";
   }
@@ -76,7 +77,7 @@ export const STContainer = styled.div<ISTContainerProps>`
         ? `rgb(${theme.pc.S3})`
         : `rgba(${theme.pc.M5}, 0.5)`};
     border-top-style: ${({ borderStyle }) => borderStyle};
-    border-top-width: 1px;
+    border-top-width: 2px;
     transform: translateY(50%);
     content: "";
   }

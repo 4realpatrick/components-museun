@@ -1,6 +1,7 @@
 import { RouteObject } from "react-router-dom";
 import Home from "../pages/home";
 import ButtonPage from "&/pages/buttons";
+import DividerPage from "&/pages/divider";
 // 页面路由
 const routes: RouteObject[] = [
   {
@@ -11,6 +12,10 @@ const routes: RouteObject[] = [
       {
         path: "button",
         element: <ButtonPage />,
+      },
+      {
+        path: "divider",
+        element: <DividerPage />,
       },
     ],
   },

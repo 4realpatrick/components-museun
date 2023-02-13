@@ -10,7 +10,7 @@ interface IDviderProps {
   dividerColor?: string;
   margin?: number;
   offset?: number;
-  isUsingTheme?: boolean;
+  useTheme?: boolean;
   containerStyle?: CSSProperties;
 }
 const Divider: React.FCWithChildren<IDviderProps> = memo(
@@ -23,7 +23,7 @@ const Divider: React.FCWithChildren<IDviderProps> = memo(
     margin = 24,
     offset = 0,
     innerPadding = 16,
-    isUsingTheme = false,
+    useTheme = false,
     dividerColor = "",
     containerStyle = {},
   }) => {
@@ -33,12 +33,12 @@ const Divider: React.FCWithChildren<IDviderProps> = memo(
         borderStyle={type}
         margin={margin}
         offset={offset}
-        isUsingTheme={isUsingTheme}
+        isUsingTheme={useTheme}
         dividerColor={dividerColor}
         style={containerStyle}
       >
         {(title || children) && (
-          <STTitle style={fontStyle} innerPadding={innerPadding} isUsingTheme={isUsingTheme}>
+          <STTitle style={fontStyle} innerPadding={innerPadding} isUsingTheme={useTheme}>
             {title || children}
           </STTitle>
         )}
