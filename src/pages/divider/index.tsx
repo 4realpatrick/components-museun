@@ -1,11 +1,10 @@
 import DisplayBlock from "&/components/display";
 import React from "react";
-import * as st from "./style.st";
 import Divider from "&/components/divider";
 
 const ButtonPage: React.FC = () => {
   return (
-    <st.wrapper>
+    <>
       <DisplayBlock
         title="Divider现在支持三种类型，solid、dash、dot，默认值为solid"
         inline={false}
@@ -45,7 +44,7 @@ const ButtonPage: React.FC = () => {
           containerStyle={{ background: "wheat" }}
         />
       </DisplayBlock>
-    </st.wrapper>
+    </>
   );
 };
 export default ButtonPage;

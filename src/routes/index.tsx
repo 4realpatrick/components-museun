@@ -2,6 +2,7 @@ import { RouteObject } from "react-router-dom";
 import Home from "../pages/home";
 import ButtonPage from "&/pages/buttons";
 import DividerPage from "&/pages/divider";
+import ToTopPage from "&/pages/to-top";
 // 页面路由
 const routes: RouteObject[] = [
   {
@@ -16,6 +17,10 @@ const routes: RouteObject[] = [
       {
         path: "divider",
         element: <DividerPage />,
+      },
+      {
+        path: "to-top",
+        element: <ToTopPage />,
       },
     ],
   },

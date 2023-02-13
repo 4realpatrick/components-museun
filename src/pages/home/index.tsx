@@ -22,10 +22,14 @@ const Home: React.FCWithChildren = () => {
       {location.pathname === "/" && (
         <styled.container>
           <styled.title>Welcome 2 my React Components lib 🎉</styled.title>
-          <styled.description>Please select a component from nav for preview</styled.description>
+          <styled.description>
+            Please select a component from nav for preview
+          </styled.description>
         </styled.container>
       )}
-      <Outlet />
+      <div style={{ margin: 50 }}>
+        <Outlet />
+      </div>
     </ThemeProvider>
   );
 };

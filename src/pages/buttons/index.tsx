@@ -2,11 +2,10 @@ import Button from "&/components/button";
 import DisplayBlock from "&/components/display";
 import React from "react";
 import Eyeopen from "&/asset/eye-open";
-import * as st from "./style.st";
 
 const ButtonPage: React.FC = () => {
   return (
-    <st.wrapper>
+    <>
       <h1>按钮分为4种尺寸：Super、Large、Medium、Small</h1>
       <DisplayBlock title="Primary Button" desc="主样式按钮">
         <Button title="Primary-super" size="super" />
@@ -50,7 +49,7 @@ const ButtonPage: React.FC = () => {
       <DisplayBlock title="Button with url" desc="跳转会在click之前触发">
         <Button title="bilibili.com"  href="https://bilibili.com"/>
       </DisplayBlock>
-    </st.wrapper>
+    </>
   );
 };
 export default ButtonPage;
