@@ -3,6 +3,7 @@ import Home from "../pages/home";
 import ButtonPage from "&/pages/buttons";
 import DividerPage from "&/pages/divider";
 import ToTopPage from "&/pages/to-top";
+import BannerPage from "&/pages/banner";
 // 页面路由
 const routes: RouteObject[] = [
   {
@@ -21,6 +22,10 @@ const routes: RouteObject[] = [
       {
         path: "to-top",
         element: <ToTopPage />,
+      },
+      {
+        path: "banner",
+        element: <BannerPage />,
       },
     ],
   },
