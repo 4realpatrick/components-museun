@@ -3,6 +3,7 @@ import { ITextButtonProps } from "./interface";
 import { STTextBtnWrapper, STButton, STLoadingWrapper } from "./style.st";
 import Loading from "./loading";
 import { useTheme } from "styled-components";
+export type { ITextButtonProps };
 const TextButton: FCWithChildren<ITextButtonProps> = memo(
   ({
     type = "primary",

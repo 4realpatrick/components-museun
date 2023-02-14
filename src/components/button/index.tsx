@@ -1,9 +1,14 @@
 import React, { FCWithChildren, useCallback, useMemo, memo } from "react";
 import { IButtonProps } from "./interface";
-import { STWrapper, STButton, STLoadingWrapper, STIconWrapper } from "./style.st";
+import {
+  STWrapper,
+  STButton,
+  STLoadingWrapper,
+  STIconWrapper,
+} from "./style.st";
 import Loading from "./loading";
 import { useTheme } from "styled-components";
-import TextButton from "./text-button";
+import TextButton, { ITextButtonProps } from "./text-button";
 const Button: FCWithChildren<IButtonProps> = memo(
   ({
     type = "primary",
@@ -76,7 +81,9 @@ const Button: FCWithChildren<IButtonProps> = memo(
       >
         {loadingPosition === "left" && loadingIcon}
         {iconPosition === "left" && !loading && !disabled && limitIcon}
-        {!iconOnly && <STButton maxWidth={!!maxWidth}>{title ? title : children}</STButton>}
+        {!iconOnly && (
+          <STButton maxWidth={!!maxWidth}>{title ? title : children}</STButton>
+        )}
         {iconPosition === "right" && !loading && !disabled && limitIcon}
         {loadingPosition === "right" && loadingIcon}
       </STWrapper>
@@ -105,4 +112,5 @@ const Button: FCWithChildren<IButtonProps> = memo(
  * @param {TIconPosition} [props.loadingPosition] 可选，loading图标的位置，默认左边
  */
 export default Button;
+export type { IButtonProps, ITextButtonProps };
 export { TextButton };
