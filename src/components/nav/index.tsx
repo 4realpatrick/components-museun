@@ -1,6 +1,6 @@
 import React from "react";
 import * as styled from "./styled.st";
-const Nav: React.FCWithChildren = () => {
+const Nav: React.FC = () => {
   return (
     <styled.navWrapper>
       <styled.navItem to="">Home</styled.navItem>

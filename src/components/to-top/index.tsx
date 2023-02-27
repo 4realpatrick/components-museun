@@ -1,5 +1,5 @@
 // React
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Style
 import * as styled from "./style.st";
 import Icon from "./icon";
@@ -12,7 +12,7 @@ interface IToTopProps {
   bottom?: number;
 }
 
-const ToTop: React.FCWithChildren<IToTopProps> = ({
+const ToTop: React.FC<IToTopProps> = ({
   displayHeight = 0,
   right = 50,
   bottom = 50,
@@ -20,18 +20,10 @@ const ToTop: React.FCWithChildren<IToTopProps> = ({
   const [show, setShow] = useState<boolean>(false);
   // 去最上方
   const handleToTop = () => {
-    let timer: number = 0;
-    cancelAnimationFrame(timer);
-    timer = requestAnimationFrame(function fn() {
-      let oTop = document.body.scrollTop || document.documentElement.scrollTop;
-      if (oTop > 0) {
-        document.body.scrollTop = document.documentElement.scrollTop =
-          oTop - 100;
-        timer = requestAnimationFrame(fn);
-      } else {
-        cancelAnimationFrame(timer);
-      }
-    });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
   };
   useEffect(() => {
     const handleScroll = throttle(() => {

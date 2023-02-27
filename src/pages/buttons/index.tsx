@@ -180,8 +180,8 @@ const ButtonPage: React.FC = () => {
   return (
     <>
       <h1>按钮分为4种尺寸：Super、Large、Medium、Small</h1>
-      {propsList.map((item) => (
-        <DisplayBlock title={item.title} desc={item.desc}>
+      {propsList.map((item, index) => (
+        <DisplayBlock title={item.title} desc={item.desc} key={index}>
           {item.propsArray.map((props) => (
             <Button {...props} />
           ))}

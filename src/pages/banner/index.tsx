@@ -57,8 +57,8 @@ const propsList: {
 const BannerPage: React.FCWithChildren = () => {
   return (
     <div>
-      {propsList.map((item) => (
-        <DisplayBlock title={item.title}>
+      {propsList.map((item, index) => (
+        <DisplayBlock title={item.title} key={index}>
           <div style={{ height: 300, width: "100%" }}>
             <Banner {...item.props} />
           </div>

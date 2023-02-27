@@ -5,6 +5,7 @@ export const STRoot = styled.div`
   height: inherit;
 `;
 export const STFlexContainer = styled.div`
+  height: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
