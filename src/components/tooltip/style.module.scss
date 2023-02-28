@@ -1,0 +1,92 @@
+$popperMargin: 9px;
+$arrowSize: 10px;
+
+.popper_tooltip {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  left: -9999px;
+  background-color: rgb(51,56,61);
+  border-radius: 3px;
+  padding: 4px 10px ;
+  transition: opacity 0.1s linear;
+
+  [data-popper-arrow] {
+    position: absolute;
+    width: $arrowSize;
+    height: $arrowSize;
+    &:before {
+      content: "";
+      width: $arrowSize;
+      height: $arrowSize;
+      transform-origin: center center;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: rgb(51,56,61);
+    }
+  }
+
+  &[data-popper-placement^='bottom'] {
+    margin-top: $popperMargin;
+  }
+
+  &[data-popper-placement^='top'] {
+    margin-bottom: $popperMargin;
+  }
+
+  &[data-popper-placement^='left'] {
+    margin-right: $popperMargin;
+  }
+
+  &[data-popper-placement^='right'] {
+    margin-left: $popperMargin;
+  }
+
+  &[data-popper-placement^='bottom'] [data-popper-arrow] {
+    top: -4px;
+    // border-bottom: $arrowSize solid $M2;
+    // border-right: $arrowSize solid transparent;
+    // border-left: $arrowSize solid transparent;
+  }
+
+  &[data-popper-placement^='top'] [data-popper-arrow] {
+    bottom: -4px;
+    // border-top: $arrowSize solid $M2;
+    // border-right: $arrowSize solid transparent;
+    // border-left: $arrowSize solid transparent;
+  }
+
+  &[data-popper-placement^='left'] [data-popper-arrow] {
+    right: -4px;
+    // border-left: $arrowSize solid $M2;
+    // border-top: $arrowSize solid transparent;
+    // border-bottom: $arrowSize solid transparent;
+  }
+
+  &[data-popper-placement^='right'] [data-popper-arrow] {
+    left: -4px;
+    // border-right: $arrowSize solid $M2;
+    // border-top: $arrowSize solid transparent;
+    // border-bottom: $arrowSize solid transparent;
+  }
+}
+
+.tooltip_content {
+  max-height: 280px;
+  max-width: 396px;
+  font-size: 12px;
+  line-height: 20px;
+  overflow: hidden;
+  color: rgb(255,255,255);
+  word-break: break-all;
+}
+
+.tooltip_init {
+  opacity: 0;
+}
+
+.tooltip_show {
+  opacity: 1;
+}

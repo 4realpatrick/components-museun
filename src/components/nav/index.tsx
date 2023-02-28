@@ -8,6 +8,7 @@ const Nav: React.FC = () => {
       <styled.navItem to="divider">Divider</styled.navItem>
       <styled.navItem to="to-top">ToTop</styled.navItem>
       <styled.navItem to="banner">Banner</styled.navItem>
+      <styled.navItem to="tag">Tag</styled.navItem>
     </styled.navWrapper>
   );
 };

@@ -9,6 +9,7 @@ import {
 import Loading from "./loading";
 import { useTheme } from "styled-components";
 import TextButton, { ITextButtonProps } from "./text-button";
+import Tooltip from "../tooltip";
 const Button: FCWithChildren<IButtonProps> = memo(
   ({
     type = "primary",
@@ -82,7 +83,11 @@ const Button: FCWithChildren<IButtonProps> = memo(
         {loadingPosition === "left" && loadingIcon}
         {iconPosition === "left" && !loading && !disabled && limitIcon}
         {!iconOnly && (
-          <STButton maxWidth={!!maxWidth}>{title ? title : children}</STButton>
+          <Tooltip>
+            <STButton maxWidth={!!maxWidth}>
+              {title ? title : children}
+            </STButton>
+          </Tooltip>
         )}
         {iconPosition === "right" && !loading && !disabled && limitIcon}
         {loadingPosition === "right" && loadingIcon}
